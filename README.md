@@ -7,4 +7,3 @@ Portfolio
 4. As a USER, I want the option to make all images clickable and go to the correct directory.
 5. As a USER, I want to make sure the site is viewable on multiple platforms.
 6. As a USER, I want links to all directories such as linkedin, email, social.
-7. As a USER, I want to see who this person is and read an about me. 
