@@ -1,0 +1,67 @@
+.resume-header {
+  background: #0b2856;
+}
+
+.heading-h1 {
+  float: left;
+  padding: 0 0 .2em 1em;
+}
+
+.icon-menu {
+  float: right;
+  font-size: 3em;
+}
+
+.top-nav {
+  padding: 0.1em;
+}
+
+.top-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.top-nav:hover ul {
+  display: block;
+}
+
+.top-nav li {
+  margin-right: .4em;
+  font-size: 1.5em;
+  padding: .5em .2em;
+  border-bottom: 1px solid #ccc;
+}
+
+.template {
+  display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .icon-home::before, .icon-cross::before, .icon-address-book::before, .icon-github::before {
+    content: "";
+  }
+
+  .top-nav {
+    text-align: center;
+  }
+
+  .top-nav ul {
+    display: block;
+  }
+  .top-nav li {
+    display: inline;
+    margin: 3%;
+  }
+}
+.linkedImage {
+  float: left;
+  border-radius: 50%;
+  width: 20%;
+  height:auto;
+}
