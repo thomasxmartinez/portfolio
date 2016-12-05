@@ -7,16 +7,16 @@ function Roles (jobs) {
 };
 
 Roles.prototype.toHtml = function() {
-  var $newRoles = $('resume-body.template').clone();
-  $newRoles.find('a').attr('href').text(this.location);
-  $newRoles.find('h1').text(this.jobTitle);
-  $newRoles.find('.resume-body').append(this.jobDescription);
+  var $newRoles = $('article.template').clone();
+  $newRoles.find('.job-title').text(this.location);
+  $newRoles.find('.location').text(this.jobTitle);
+  $newRoles.find('.resume-body').html(this.jobDescription);
   $newRoles.removeClass('template');
   return $newRoles;
 };
 
 roleDescriptor.forEach(function(jobsObj) {
-  roleDescriptor.push(new Roles(jobsObj));
+  previousRoles.push(new Roles(jobsObj));
 });
 
 previousRoles.forEach(function(jobsObj) {

@@ -18,10 +18,6 @@ p {
   font-size: 1em;
 }
 
-address {
-  display: inline-block;
-}
-
 article {
   border-bottom: 2px solid black;
   margin: 0 2.5%;

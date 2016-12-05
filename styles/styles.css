@@ -4,17 +4,8 @@ body {
   color: #313131;
 }
 
-hr {
-  margin: 1em;
-  width: 80%;
-}
-
 p {
   font-size: 1em;
-}
-
-address {
-  display: inline-block;
 }
 
 article {
