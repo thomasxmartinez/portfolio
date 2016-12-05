@@ -1,35 +1,24 @@
-var articles = [];
+var previousRoles = [];
 
-function Article (options) {
-  this.title = options.title;
-  this.category = options.category;
-  this.author = options.author;
-  this.authorUrl = options.authorUrl;
-  this.publishedOn = options.publishedOn;
-  this.body = options.body;
-
+function Roles (jobs) {
+  this.jobTitle = jobs.jobTitle;
+  this.location = jobs.location;
+  this.jobDescription = jobs.jobDescription;
 };
 
-Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  $newArticle.attr('data-category', this.category);
-  $newArticle.find('a').attr('href', this.authorUrl).text(this.author);
-  $newArticle.find('h1').text(this.title);
-  $newArticle.find('.article-body').append(this.body);
-  $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
-  $newArticle.find('time').text('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-  $newArticle.removeClass('template');
-  return $newArticle;
+Roles.prototype.toHtml = function() {
+  var $newRoles = $('resume-body.template').clone();
+  $newRoles.find('a').attr('href').text(this.location);
+  $newRoles.find('h1').text(this.jobTitle);
+  $newRoles.find('.resume-body').append(this.jobDescription);
+  $newRoles.removeClass('template');
+  return $newRoles;
 };
 
-blogArticles.sort(function(currentObject, nextObject) {
-  return (new Date(nextObject.publishedOn)) - (new Date(currentObject.publishedOn));
+roleDescriptor.forEach(function(jobsObj) {
+  roleDescriptor.push(new Roles(jobsObj));
 });
 
-blogArticles.forEach(function(articleObj) {
-  articles.push(new Article(articleObj));
-});
-
-articles.forEach(function(articleObj) {
-  $('#articles').append(articleObj.toHtml());
+previousRoles.forEach(function(jobsObj) {
+  $('#resume-info').append(jobsObj.toHtml());
 });
