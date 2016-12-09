@@ -2,7 +2,7 @@ var roleDescriptor = [
   {
     jobTitle: 'Account Manager',
     location: 'Seattle',
-    jobDescription: '<p>"Job Title"</p><p>"JOB DESCRIPTION. Responsible for developing profitable new business as well as growing sales in existing assigned accounts in a specified geographical area for primarily independent and smaller group customers defined as less than five stores. The Independent Sales Representative also participates with the sales team to respond to customer needs, monitor accounts receivable and build strong customer relations while controlling expenses within budget guidelines.Achieve and/or exceed sales, APSW, and gross margin budget."</p>'
+    jobDescription: '<p>Responsible for developing profitable new business as well as growing sales in existing assigned accounts in a specified geographical area for primarily independent and smaller group customers defined as less than five stores. The Independent Sales Representative also participates with the sales team to respond to customer needs, monitor accounts receivable and build strong customer relations while controlling expenses within budget guidelines.Achieve and/or exceed sales, APSW, and gross margin budget.</p>'
   },
   {
     jobTitle: 'Claims Associate',

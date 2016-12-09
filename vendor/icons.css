@@ -18,55 +18,56 @@
 	text-transform: none;
 	line-height: 1;
 
+	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home::before {
+.icon-home:before {
 	content: "\e908";
 }
-.icon-home3::before {
+.icon-home3:before {
 	content: "\e900";
 }
-.icon-address-book::before {
+.icon-address-book:before {
 	content: "\e901";
 }
-.icon-rocket::before {
+.icon-rocket:before {
 	content: "\e909";
 }
-.icon-power::before {
+.icon-power:before {
 	content: "\e90a";
 }
-.icon-menu::before {
+.icon-menu:before {
 	content: "\e902";
 }
-.icon-link::before {
+.icon-link:before {
 	content: "\e903";
 }
-.icon-happy::before {
+.icon-happy:before {
 	content: "\e904";
 }
-.icon-happy2::before {
+.icon-happy2:before {
 	content: "\e905";
 }
-.icon-plus::before {
+.icon-plus:before {
 	content: "\e90b";
 }
-.icon-minus::before {
+.icon-minus:before {
 	content: "\e90c";
 }
-.icon-cross::before {
+.icon-cross:before {
 	content: "\e90d";
 }
-.icon-checkmark::before {
+.icon-checkmark:before {
 	content: "\e90e";
 }
-.icon-twitter3::before {
+.icon-twitter3:before {
 	content: "\e906";
 }
-.icon-github::before {
+.icon-github:before {
 	content: "\e907";
 }
-.icon-linkedin::before {
-  content: "\eac9";
+.icon-linkedin:before {
+  content: "\"
 }

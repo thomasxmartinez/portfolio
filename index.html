@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Thomas Martinez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="vendor/styles/icons.css">
+   <link rel="stylesheet" href="vendor/styles/normalize.css">
+  <link rel="stylesheet" href="vendor/icons.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
@@ -21,26 +22,45 @@
     <nav class="top-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li><a href="#" class="icon-home"> Home</a></li>
-        <li><a href="#" class="icon-cross"> About</a></li>
-        <li><a href="https://www.linkedin.com/in/thomasxmartinez" class="icon-address-book"> LinkedIn</a></li>
-        <li><a href="https://github.com/thomasxmartinez/" class="icon-github"> GitHub</a></li>
+        <li class="tab" data-content="resume-info"><a href="#" class="icon-home"> Home</a></li>
+        <li class="tab" data-content="about"><a href="#" class="icon-cross"> About</a></li>
+        <li><a href="https://www.linkedin.com/in/thomasxmartinez" target="_blank" class="icon-address-book"> LinkedIn</a></li>
+        <li><a href="https://github.com/thomasxmartinez/" target="_blank" class="icon-github"> GitHub</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="resume-info">
-      <article class="template">
+    <section id="resume-info" class="tab-content" title-category="attr-category">
+      <article class="template" title-category="attr-category">
           <h1 class="job-title"></h1>
           <h2 class="location"></h2>
           <section class="resume-body"></section>
+          <a href="#" class="read-on">Read on &rarr;</a>
       </article>
+      <section id="about" class="tab-content">
       </section>
+      <section>
+        <div>
+      </div>
+     </section>
     </main>
     <footer>
+      <section>
+      <div>
+          <p> THIS IS STUFF ABOUT ME </p>
+        <ul id="filters">
+          <li>
+            <select id="resume-info">
+              <option value=""> Filter by Title </option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </section>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type= "text/javascript" src= "scripts/resumeinfo.js" ></script>
     <script type= "text/javascript" src= "scripts/constructor.js" ></script>
+    <scritp type= "text/javascript" src= "scripts/resumefilter.js"></script>
   </body>
   </html>
