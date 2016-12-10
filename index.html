@@ -12,6 +12,20 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 <body>
+  <script id="resume-template" type="text/x-handlebars-template">
+  <article class="clear" data-location="{{location}}" data-title="{{jobTitle}}">
+    <header>
+      <h1>{{jobTitle}}</h1>
+      <div>
+        <address><a href="{{location}}"></a></address>
+        {{location}}
+        {{{jobDescription}}}
+      </div>
+    </header>
+    <section class="resume-body"></section>
+    <a href="#" class="read-on">Read on &rarr;</a>
+  </article>
+</script>
   <header class="resume-header clear">
     <img class="linkedImage" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAUCAAAAJDU1YjcwZWZhLTM3NWMtNGNjNC04ZDVjLTgwZjI1NTk1N2I2OA.jpg">
     <section class="heading-h1">
@@ -58,6 +72,7 @@
       </div>
     </section>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type= "text/javascript" src= "scripts/resumeinfo.js" ></script>
     <script type= "text/javascript" src= "scripts/constructor.js" ></script>

@@ -7,12 +7,9 @@ function Roles (jobs) {
 };
 
 Roles.prototype.toHtml = function() {
-  var $newRoles = $('article.template').clone();
-  $newRoles.find('.job-title').text(this.location);
-  $newRoles.find('.location').text(this.jobTitle);
-  $newRoles.find('.resume-body').html(this.jobDescription);
-  $newRoles.removeClass('template');
-  return $newRoles;
+  var $source = $('#resume-template').html();
+  var templateRender = Handlebars.compile($source);
+  return templateRender(this);
 };
 
 roleDescriptor.forEach(function(jobsObj) {
