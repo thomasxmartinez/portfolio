@@ -1,10 +1,10 @@
-var previousRoles = [];
+function Roles (opts) {
+  for (var keys in opts) {
+    this[keys] = opts[keys];
+  }
+}
 
-function Roles (jobs) {
-  this.jobTitle = jobs.jobTitle;
-  this.location = jobs.location;
-  this.jobDescription = jobs.jobDescription;
-};
+Roles.previousRoles = [];
 
 Roles.prototype.toHtml = function() {
   var $source = $('#resume-template').html();
@@ -12,10 +12,20 @@ Roles.prototype.toHtml = function() {
   return templateRender(this);
 };
 
-roleDescriptor.forEach(function(jobsObj) {
-  previousRoles.push(new Roles(jobsObj));
-});
+Roles.loadAll = function(input) {
+  input.forEach(function(ele) {
+    Roles.previousRoles.push(new Roles(ele));
+  });
+};
 
-previousRoles.forEach(function(jobsObj) {
-  $('#resume-info').append(jobsObj.toHtml());
-});
+Roles.fetchAll = function() {
+  if (localStorage.resumeData) {
+    Roles.loadAll(JSON.parse(localStorage.resumeData));
+    resumeFilter.renderIndexPage();
+  } else {
+    $.getJSON('data/resumeData.json', function (data) {
+      localStorage.resumeData = JSON.stringify(data);
+      resumeFilter.renderIndexPage();
+    });
+  }
+};

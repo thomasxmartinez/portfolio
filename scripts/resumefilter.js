@@ -1,6 +1,4 @@
-
 var resumeFilter = {};
-
 
 resumeFilter.createFilter = function() {
   $('article').not('.template').each(function() {
@@ -9,10 +7,6 @@ resumeFilter.createFilter = function() {
     optionFilter = '<option value="' + location + '">' + location + '</option>';
     $('#resume-info').append(optionFilter);
     jobTitle = $(this).attr('title-category');
-    optionFilter = '<option value="' + jobTitle + '">' + jobTitle + '</option>';
-    if ($('#resume-info option[value="' + jobTitle + '"]').length === 0) {
-      $('#resume-info').append(optionFilter);
-    }
   });
 };
 
@@ -38,7 +32,7 @@ resumeFilter.topNav = function () {
 };
 
 resumeFilter.setTeasers = function() {
-  $('.resume-body *:nth-of-type(n+2)').hide();
+  $('.resume-body *:nth-of-type(n+1)').hide();
   $('article').on('click','.read-on',function(event) {
     event.preventDefault();
     if ($(this).html() === 'Read on →') {
@@ -46,13 +40,24 @@ resumeFilter.setTeasers = function() {
       $(this).prev().children().show();
       $(this).html('&larr; Show less');
     } else {
-      $('.resume-body *:nth-of-type(n+2)').hide();
+      $('.resume-body *:nth-of-type(n+1)').hide();
       $(this).html('Read on &rarr;');
     }
     return false;
   });
 };
-resumeFilter.createFilter();
-resumeFilter.orgResumeFilter();
-resumeFilter.topNav();
-resumeFilter.setTeasers();
+
+resumeFilter.renderIndexPage = function() {
+  Roles.previousRoles.forEach(function(a) {
+    $('#resume-info').append(a.toHtml('#resume-template'));
+    if($('#filters option:contains("'+ a.category + '")').length === 0) {
+      $('#filters').append(a.toHtml('#filters'));
+    };
+  });
+
+  resumeFilter.createFilter();
+  resumeFilter.orgResumeFilter();
+  resumeFilter.topNav();
+  resumeFilter.setTeasers();
+};
+Roles.fetchAll();
