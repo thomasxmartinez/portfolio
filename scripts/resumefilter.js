@@ -1,6 +1,4 @@
-
 var resumeFilter = {};
-
 
 resumeFilter.createFilter = function() {
   $('article').not('.template').each(function() {
@@ -9,10 +7,6 @@ resumeFilter.createFilter = function() {
     optionFilter = '<option value="' + location + '">' + location + '</option>';
     $('#resume-info').append(optionFilter);
     jobTitle = $(this).attr('title-category');
-    optionFilter = '<option value="' + jobTitle + '">' + jobTitle + '</option>';
-    if ($('#resume-info option[value="' + jobTitle + '"]').length === 0) {
-      $('#resume-info').append(optionFilter);
-    }
   });
 };
 
@@ -52,7 +46,15 @@ resumeFilter.setTeasers = function() {
     return false;
   });
 };
-resumeFilter.createFilter();
-resumeFilter.orgResumeFilter();
-resumeFilter.topNav();
-resumeFilter.setTeasers();
+
+resumeFilter.renderIndexPage = function() {
+  Roles.previousRoles.forEach(function(a) {
+    $('#resume-info').append(a.toHtml('#resume-template'));
+  });
+
+  resumeFilter.createFilter();
+  resumeFilter.orgResumeFilter();
+  resumeFilter.topNav();
+  resumeFilter.setTeasers();
+};
+Roles.fetchAll(resumeFilter.renderIndexPage);
