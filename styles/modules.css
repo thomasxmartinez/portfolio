@@ -5,11 +5,13 @@
 .heading-h1 {
   float: left;
   padding: 0 0 .2em 1em;
+  color: #77ffaa;
 }
 
 .icon-menu {
   float: right;
   font-size: 3em;
+  color: #77ffaa;
 }
 
 .top-nav {
