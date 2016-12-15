@@ -57,4 +57,4 @@ resumeFilter.renderIndexPage = function() {
   resumeFilter.topNav();
   resumeFilter.setTeasers();
 };
-Roles.fetchAll();
+Roles.fetchAll(resumeFilter.renderIndexPage);
