@@ -32,7 +32,7 @@ resumeFilter.topNav = function () {
 };
 
 resumeFilter.setTeasers = function() {
-  $('.resume-body *:nth-of-type(n+1)').hide();
+  $('.resume-body *:nth-of-type(n+2)').hide();
   $('article').on('click','.read-on',function(event) {
     event.preventDefault();
     if ($(this).html() === 'Read on →') {
@@ -40,7 +40,7 @@ resumeFilter.setTeasers = function() {
       $(this).prev().children().show();
       $(this).html('&larr; Show less');
     } else {
-      $('.resume-body *:nth-of-type(n+1)').hide();
+      $('.resume-body *:nth-of-type(n+2)').hide();
       $(this).html('Read on &rarr;');
     }
     return false;
@@ -50,9 +50,6 @@ resumeFilter.setTeasers = function() {
 resumeFilter.renderIndexPage = function() {
   Roles.previousRoles.forEach(function(a) {
     $('#resume-info').append(a.toHtml('#resume-template'));
-    if($('#filters option:contains("'+ a.category + '")').length === 0) {
-      $('#filters').append(a.toHtml('#filters'));
-    };
   });
 
   resumeFilter.createFilter();
