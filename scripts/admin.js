@@ -5,3 +5,16 @@ resumeFilter.renderAd = function() {
 };
 
 Roles.fetchAll(resumeFilter.renderAd);
+
+
+(function(module) {
+  var aboutShow = {};
+
+  aboutShow.reveal = function() {
+
+    $('.tab-content').hide();
+    $('#about').show();
+  };
+
+  module.aboutShow = aboutShow;
+})(window);
